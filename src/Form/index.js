@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./style.css";
 
 const Form = () => {
+    const [inputValue, setInputValue] = useState('');
+
     const onFormSubmit = (event) => {
         event.preventDefault();
     };
@@ -16,6 +19,8 @@ const Form = () => {
         <input
             className="form__input"
             type="number"
+            value={inputValue}
+            onChange={({ target }) => { setInputValue(target.value) }}
             min={0}
             placeholder="Wpisz kwotę"
             autoFocus
