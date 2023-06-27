@@ -1,7 +1,14 @@
 import "./style.css";
 
 const Form = () => {
-    return (<form className="form">
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+    };
+
+    return (<form
+        className="form"
+        onSubmit={onFormSubmit}
+    >
         <legend>
             Kwota w złotówkach:
         </legend>
