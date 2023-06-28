@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { currencies } from "../currencies";
 import "./style.css";
 
 const Form = () => {
@@ -31,7 +32,13 @@ const Form = () => {
             Waluta:
         </legend>
 
-        <select className="form__select" />
+        <select className="form__select">
+            {currencies.map(currency => (
+                <option key={currency.id}>
+                    {currency.name}
+                </option>
+            ))}
+        </select>
 
         <button
             className="form__button"
