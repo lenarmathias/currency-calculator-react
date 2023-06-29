@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { currencies } from "../currencies";
 import "./style.css";
 
-const Form = () => {
-    const [inputValue, setInputValue] = useState('');
+const Form = ({ inputValue, setInputValue, handleCurrencyChange }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -33,10 +31,13 @@ const Form = () => {
                 Waluta:
             </legend>
 
-            <select className="form__select">
+            <select
+                className="form__select"
+                onChange={handleCurrencyChange}
+            >
                 {currencies.map(currency => (
                     <option key={currency.id}>
-                        {currency.name}
+                        {currency.id}
                     </option>
                 ))}
             </select>
