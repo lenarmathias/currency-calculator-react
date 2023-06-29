@@ -9,6 +9,12 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
 
+  const handleInputChange = ({ target }) => {
+    const { value } = target;
+    const sanitizedValue = value.replace(/-/g, '');
+    setInputValue(sanitizedValue);
+  };
+
   const handleCurrencyChange = ({ target }) => {
     const selectedCurrencyId = target.value;
     const selected = currencies.find((currency) => currency.id === selectedCurrencyId);
@@ -21,7 +27,7 @@ function App() {
       <Form
         inputValue={inputValue}
         handleCurrencyChange={handleCurrencyChange}
-        setInputValue={setInputValue}
+        handleInputChange={handleInputChange}
       />
       <Result />
     </Container>

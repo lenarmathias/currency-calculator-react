@@ -1,7 +1,7 @@
 import { currencies } from "../currencies";
 import "./style.css";
 
-const Form = ({ inputValue, setInputValue, handleCurrencyChange }) => {
+const Form = ({ inputValue, handleCurrencyChange, handleInputChange }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -20,7 +20,7 @@ const Form = ({ inputValue, setInputValue, handleCurrencyChange }) => {
                 className="form__input"
                 type="number"
                 value={inputValue}
-                onChange={({ target }) => { setInputValue(target.value) }}
+                onChange={handleInputChange}
                 min="0"
                 placeholder="Wpisz kwotę"
                 autoFocus
