@@ -55,7 +55,12 @@ function App() {
         handleInputChange={handleInputChange}
         calcConvertedValue={calcConvertedValue}
       />
-      <Result />
+      {shouldRender &&
+        <Result
+          refreshedInputValue={dynamicInputValue}
+          convertedValue={convertedValue}
+          refreshedSelectedCurrency={dynamicSelectedCurrency}
+        />}
     </Container>
   );
 }
