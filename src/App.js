@@ -8,6 +8,11 @@ import { currencies } from "./currencies";
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
+  const [convertedValue, setConvertedValue] = useState(0);
+  const [shouldRender, setShouldRender] = useState(false);
+  const [dynamicInputValue, setDynamicInputValue] = useState(inputValue);
+  const [dynamicSelectedCurrency, setDynamicSelectedCurrency] = useState(selectedCurrency);
+
   const onFormSubmit = (event) => {
     event.preventDefault();
   };
@@ -24,6 +29,22 @@ function App() {
     setSelectedCurrency(selected);
   };
 
+  const handleRefresh = () => {
+    setDynamicInputValue(inputValue);
+    setDynamicSelectedCurrency(selectedCurrency.code);
+  };
+
+  const calcConvertedValue = () => {
+    if (inputValue === '') {
+      setShouldRender(false);
+    } else {
+      setShouldRender(true);
+    }
+    const convertedValue = inputValue / selectedCurrency.exchangeRate;
+    setConvertedValue(convertedValue);
+    handleRefresh();
+  };
+
   return (
     <Container>
       <Header title="Kalkulator Walut" />
@@ -32,6 +53,7 @@ function App() {
         inputValue={inputValue}
         handleCurrencyChange={handleCurrencyChange}
         handleInputChange={handleInputChange}
+        calcConvertedValue={calcConvertedValue}
       />
       <Result />
     </Container>
