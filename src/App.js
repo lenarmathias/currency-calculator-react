@@ -8,6 +8,9 @@ import { currencies } from "./currencies";
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+  };
 
   const handleInputChange = ({ target }) => {
     const { value } = target;
@@ -25,6 +28,7 @@ function App() {
     <Container>
       <Header title="Kalkulator Walut" />
       <Form
+        onFormSubmit={onFormSubmit}
         inputValue={inputValue}
         handleCurrencyChange={handleCurrencyChange}
         handleInputChange={handleInputChange}

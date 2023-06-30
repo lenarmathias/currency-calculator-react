@@ -1,52 +1,46 @@
 import { currencies } from "../currencies";
 import "./style.css";
 
-const Form = ({ inputValue, handleCurrencyChange, handleInputChange }) => {
+const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChange, calcConvertedValue }) => (
+    <form
+        className="form"
+        onSubmit={onFormSubmit}
+    >
+        <legend>
+            Kwota w złotówkach:
+        </legend>
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-    };
+        <input
+            className="form__input"
+            type="number"
+            value={inputValue}
+            onChange={handleInputChange}
+            min="0"
+            placeholder="Wpisz kwotę"
+            autoFocus
+            required
+        />
 
-    return (
-        <form
-            className="form"
-            onSubmit={onFormSubmit}
+        <legend>
+            Waluta:
+        </legend>
+
+        <select
+            className="form__select"
+            onChange={handleCurrencyChange}
         >
-            <legend>
-                Kwota w złotówkach:
-            </legend>
+            {currencies.map(currency => (
+                <option key={currency.id}>
+                    {currency.id}
+                </option>
+            ))}
+        </select>
 
-            <input
-                className="form__input"
-                type="number"
-                value={inputValue}
-                onChange={handleInputChange}
-                min="0"
-                placeholder="Wpisz kwotę"
-                autoFocus
-                required
-            />
+        <button className="form__button" onClick={calcConvertedValue}>
+            Przelicz kwotę
+        </button>
+    </form>
+);
 
-            <legend>
-                Waluta:
-            </legend>
-
-            <select
-                className="form__select"
-                onChange={handleCurrencyChange}
-            >
-                {currencies.map(currency => (
-                    <option key={currency.id}>
-                        {currency.id}
-                    </option>
-                ))}
-            </select>
-
-            <button className="form__button">
-                Przelicz kwotę
-            </button>
-        </form>
-    );
-};
 
 export default Form;
