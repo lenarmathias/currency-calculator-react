@@ -9,6 +9,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ---
 
+## Demo
+
+You can find the live version of my project on GitHub Pages here:
+
+https://lenarmathias.github.io/currency-calculator-react/
+
+---
+
 ## Usage Instruction
 
 Here's how to use my project:
