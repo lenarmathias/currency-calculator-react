@@ -42,5 +42,4 @@ const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChang
     </form>
 );
 
-
 export default Form;
