@@ -9,6 +9,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ---
 
+## Usage Instruction
+
+Here's how to use my project:
+
+![GIF of Currency Calculator usage](/src/images/overview.gif)
+
+This GIF provides an overview of my application. To utilize the currency converter, follow these steps:
+
+1. Enter the amount you wish to convert in the "Wpisz kwotę" field.
+2. Below, you will find a selector that allows you to choose the desired conversion option, such as converting the currency to USD or EUR.
+3. Simply select the desired exchange rate and click on the "Przelicz kwotę" button.
+4. The currency converter will calculate the converted amount for you and display it at the bottom.
+
+That's it! You are now ready to use the currency converter. If you have any questions or encounter any issues, please feel free to contact me for support.
+
+---
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -45,6 +62,19 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+---
+
+## Tools & Technologies
+
+- **Visual Studio Code**: A popular text editor that was used to write and edit the application's code.
+- **Google Fonts**: A free online library of fonts that was used to enhance the application's typography and overall design.
+- **Git/GitHub**: A version control system and online repository that was used to track changes to the application's code.
+- **HTML**: The application's user interface is built using HTML, which allows for the creation of structured, well-formatted content.
+- **CSS**: The application's styling is done using CSS, which allows for the creation of visually appealing and responsive designs.
+- **JavaScript**: The application's logic is written in JavaScript, which enables dynamic and interactive functionality, such as real-time updates and user input validation.
+- **React.js**: The application uses React.js, a popular JavaScript library for building interactive user interfaces with efficiency and code reusability.
+- **Exchange rates data**: The application's exchange rate data is sourced from **money.pl** website and hardcoded (last updated 28.06.2023).
 
 ---
 
