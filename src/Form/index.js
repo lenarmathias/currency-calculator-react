@@ -6,9 +6,9 @@ const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChang
         className="form"
         onSubmit={onFormSubmit}
     >
-        <legend>
+        <label>
             Kwota w złotówkach:
-        </legend>
+        </label>
 
         <input
             className="form__input"
@@ -21,9 +21,9 @@ const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChang
             required
         />
 
-        <legend>
+        <label>
             Waluta:
-        </legend>
+        </label>
 
         <select
             className="form__select"

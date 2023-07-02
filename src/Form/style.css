@@ -5,7 +5,7 @@
     grid-gap: 20px;
 }
 
-legend {
+label {
     padding: 5px;
     color: #ffffff;
     justify-self: end;
