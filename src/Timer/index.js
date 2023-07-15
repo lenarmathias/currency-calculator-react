@@ -3,7 +3,7 @@ import "./style.css";
 
 const Timer = () => {
     const [userDate, setUserDate] = useState(new Date());
-    const formatedDate = userDate.toLocaleDateString(
+    const refreshedDate = userDate.toLocaleDateString(
         "pl",
         {
             month: "long",
@@ -27,7 +27,7 @@ const Timer = () => {
 
     return (
         <p className="timer">
-            Dzisiaj jest {formatedDate}
+            Dzisiaj jest {refreshedDate}
         </p>
     );
 };
