@@ -82,6 +82,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - **CSS**: The application's styling is done using CSS, which allows for the creation of visually appealing and responsive designs.
 - **JavaScript**: The application's logic is written in JavaScript, which enables dynamic and interactive functionality, such as real-time updates and user input validation.
 - **React.js**: The application uses React.js, a popular JavaScript library for building interactive user interfaces with efficiency and code reusability.
+- **Styled Components**: Styled Components is a popular library for styling React components with a CSS-in-JS approach. It allows you to write CSS code directly within your JavaScript components, making it easier to manage and reuse styles in a component-based architecture.
 - **Exchange rates data**: The application's exchange rate data is sourced from **money.pl** website and hardcoded (last updated 28.06.2023).
 
 ---
