@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Container from "./Container";
-import Timer from "./Timer";
+import Clock from "./Clock";
 import Header from "./Header";
 import Form from "./Form";
 import Result from "./Result";
@@ -75,7 +75,7 @@ function App() {
     <>
       <GlobaStyle />
       <Container>
-        <Timer />
+        <Clock />
         <Header title="Kalkulator Walut" />
         <Form
           onFormSubmit={onFormSubmit}

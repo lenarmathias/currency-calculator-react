@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { TimerContainer } from "./styled";
+import { ClockContainer } from "./styled";
 
-const Timer = () => {
+const Clock = () => {
     const [userDate, setUserDate] = useState(new Date());
     const refreshedDate = userDate.toLocaleDateString(
         "pl",
@@ -26,10 +26,10 @@ const Timer = () => {
     }, []);
 
     return (
-        <TimerContainer>
+        <ClockContainer>
             Dzisiaj jest {refreshedDate}
-        </TimerContainer>
+        </ClockContainer>
     );
 };
 
-export default Timer;
+export default Clock;
