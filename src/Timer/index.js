@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./style.css";
+import { TimerContainer } from "./styled";
 
 const Timer = () => {
     const [userDate, setUserDate] = useState(new Date());
@@ -26,9 +26,9 @@ const Timer = () => {
     }, []);
 
     return (
-        <p className="timer">
+        <TimerContainer>
             Dzisiaj jest {refreshedDate}
-        </p>
+        </TimerContainer>
     );
 };
 
