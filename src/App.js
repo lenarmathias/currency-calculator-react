@@ -5,6 +5,31 @@ import Header from "./Header";
 import Form from "./Form";
 import Result from "./Result";
 import { currencies } from "./currencies";
+import { createGlobalStyle } from "styled-components";
+import background from "./images/background.jpg";
+
+const GlobaStyle = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  }
+
+  *, ::before, ::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: 0 auto;
+    width: 800px;
+    background-color: #222;
+    max-width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("${background}");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+`;
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -47,23 +72,26 @@ function App() {
   };
 
   return (
-    <Container>
-      <Timer />
-      <Header title="Kalkulator Walut" />
-      <Form
-        onFormSubmit={onFormSubmit}
-        inputValue={inputValue}
-        handleCurrencyChange={handleCurrencyChange}
-        handleInputChange={handleInputChange}
-        calcConvertedValue={calcConvertedValue}
-      />
-      {shouldRender &&
-        <Result
-          refreshedInputValue={dynamicInputValue}
-          convertedValue={convertedValue}
-          refreshedSelectedCurrency={dynamicSelectedCurrency}
-        />}
-    </Container>
+    <>
+      <GlobaStyle />
+      <Container>
+        <Timer />
+        <Header title="Kalkulator Walut" />
+        <Form
+          onFormSubmit={onFormSubmit}
+          inputValue={inputValue}
+          handleCurrencyChange={handleCurrencyChange}
+          handleInputChange={handleInputChange}
+          calcConvertedValue={calcConvertedValue}
+        />
+        {shouldRender &&
+          <Result
+            refreshedInputValue={dynamicInputValue}
+            convertedValue={convertedValue}
+            refreshedSelectedCurrency={dynamicSelectedCurrency}
+          />}
+      </Container>
+    </>
   );
 }
 
