@@ -1,17 +1,13 @@
 import { currencies } from "../currencies";
-import "./style.css";
+import { FormField, Label, Selector, ValueInput, ConvertButton } from "./styled";
 
 const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChange, calcConvertedValue }) => (
-    <form
-        className="form"
-        onSubmit={onFormSubmit}
-    >
-        <label>
+    <FormField onSubmit={onFormSubmit}>
+        <Label>
             Kwota w złotówkach:
-        </label>
+        </Label>
 
-        <input
-            className="form__input"
+        <ValueInput
             type="number"
             value={inputValue}
             onChange={handleInputChange}
@@ -21,25 +17,22 @@ const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChang
             required
         />
 
-        <label>
+        <Label>
             Waluta:
-        </label>
+        </Label>
 
-        <select
-            className="form__select"
-            onChange={handleCurrencyChange}
-        >
+        <Selector onChange={handleCurrencyChange}>
             {currencies.map(currency => (
                 <option key={currency.id}>
                     {currency.id}
                 </option>
             ))}
-        </select>
+        </Selector>
 
-        <button className="form__button" onClick={calcConvertedValue}>
+        <ConvertButton onClick={calcConvertedValue}>
             Przelicz kwotę
-        </button>
-    </form>
+        </ConvertButton>
+    </FormField>
 );
 
 export default Form;
