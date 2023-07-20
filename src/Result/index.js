@@ -1,9 +1,13 @@
-import "./style.css";
+import { ResultParagraph, ResultText } from "./styled";
 
 const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency }) => (
-        <p className="result">
-            {refreshedInputValue} PLN = <span className="result__boldText">{convertedValue.toFixed(2)} {refreshedSelectedCurrency}</span>
-        </p>
+    <ResultParagraph>
+        {refreshedInputValue} PLN =
+        {" "}
+        <ResultText>
+            {convertedValue.toFixed(2)} {refreshedSelectedCurrency}
+        </ResultText>
+    </ResultParagraph>
 );
 
 export default Result;
