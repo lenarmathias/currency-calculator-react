@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const FormField = styled.form`
     display: grid;
@@ -13,27 +13,21 @@ export const Label = styled.label`
     justify-self: end;
 `;
 
-export const Selector = styled.select`
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #000000;
-    color: #ffffff;
-    width: 180px;
-`;
-
-export const ValueInput = styled.input`
+export const SelectAndInput = styled.select`
     padding: 5px;
     border-radius: 5px;
     background-color: #000000;
     color: #ffffff;
     width: 180px;
 
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-    -moz-appearance: textfield;
+    ${({ input }) => input && css`
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        -moz-appearance: textfield;
+    `}
 `;
 
 export const ConvertButton = styled.button`

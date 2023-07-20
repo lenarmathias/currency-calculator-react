@@ -1,5 +1,5 @@
 import { currencies } from "../currencies";
-import { FormField, Label, Selector, ValueInput, ConvertButton } from "./styled";
+import { FormField, Label, SelectAndInput, ConvertButton } from "./styled";
 
 const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChange, calcConvertedValue }) => (
     <FormField onSubmit={onFormSubmit}>
@@ -7,7 +7,9 @@ const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChang
             Kwota w złotówkach:
         </Label>
 
-        <ValueInput
+        <SelectAndInput
+            as="input"
+            $input
             type="number"
             value={inputValue}
             onChange={handleInputChange}
@@ -21,13 +23,13 @@ const Form = ({ onFormSubmit, inputValue, handleCurrencyChange, handleInputChang
             Waluta:
         </Label>
 
-        <Selector onChange={handleCurrencyChange}>
+        <SelectAndInput onChange={handleCurrencyChange}>
             {currencies.map(currency => (
                 <option key={currency.id}>
                     {currency.id}
                 </option>
             ))}
-        </Selector>
+        </SelectAndInput>
 
         <ConvertButton onClick={calcConvertedValue}>
             Przelicz kwotę
