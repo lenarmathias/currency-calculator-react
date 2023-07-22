@@ -1,11 +1,10 @@
 import { useState } from "react";
-import Container from "./Container";
 import Clock from "./Clock";
 import Header from "./Header";
 import Form from "./Form";
 import Result from "./Result";
 import { currencies } from "./currencies";
-import { GlobaStyle } from "./styled";
+import { GlobaStyle, MainContainer } from "./styled";
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -50,7 +49,7 @@ function App() {
   return (
     <>
       <GlobaStyle />
-      <Container>
+      <MainContainer>
         <Clock />
         <Header title="Kalkulator Walut" />
         <Form
@@ -66,7 +65,7 @@ function App() {
             convertedValue={convertedValue}
             refreshedSelectedCurrency={dynamicSelectedCurrency}
           />}
-      </Container>
+      </MainContainer>
     </>
   );
 }

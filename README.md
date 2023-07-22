@@ -21,7 +21,7 @@ https://lenarmathias.github.io/currency-calculator-react/
 
 Here's how to use my project:
 
-![GIF of Currency Calculator usage](/src/images/overview.gif)
+![GIF of Currency Calculator usage](/overview.gif)
 
 This GIF provides an overview of my application. To utilize the currency converter, follow these steps:
 
