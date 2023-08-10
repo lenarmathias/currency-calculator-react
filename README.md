@@ -21,12 +21,10 @@ https://lenarmathias.github.io/currency-calculator-react/
 
 Here's how to use my project:
 
-![GIF of Currency Calculator usage](/overview.gif)
-
-This GIF provides an overview of my application. To utilize the currency converter, follow these steps:
+![Main screenshot of application](/mainScreenshot.jpg)
 
 1. Enter the amount you wish to convert in the "Wpisz kwotę" field.
-2. Below, you will find a selector that allows you to choose the desired conversion option, such as converting the currency to USD or EUR.
+2. Below, you will find a selector that allows you to choose the desired conversion option.
 3. Simply select the desired exchange rate and click on the "Przelicz kwotę" button.
 4. The currency converter will calculate the converted amount for you and display it at the bottom.
 
@@ -45,11 +43,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -79,11 +72,12 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - **Google Fonts**: A free online library of fonts that was used to enhance the application's typography and overall design.
 - **Git/GitHub**: A version control system and online repository that was used to track changes to the application's code.
 - **HTML**: The application's user interface is built using HTML, which allows for the creation of structured, well-formatted content.
-- **CSS**: The application's styling is done using CSS, which allows for the creation of visually appealing and responsive designs.
 - **JavaScript**: The application's logic is written in JavaScript, which enables dynamic and interactive functionality, such as real-time updates and user input validation.
 - **React.js**: The application uses React.js, a popular JavaScript library for building interactive user interfaces with efficiency and code reusability.
 - **Styled Components**: Styled Components is a popular library for styling React components with a CSS-in-JS approach. It allows you to write CSS code directly within your JavaScript components, making it easier to manage and reuse styles in a component-based architecture.
-- **Exchange rates data**: The application's exchange rate data is sourced from **money.pl** website and hardcoded (last updated 28.06.2023).
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+- **Axios**: Axios is a popular JavaScript library used for making HTTP requests from the browser. It was used in this application to fetch data from external sources.
+- **Exchange rates data**: The application's exchange rate data is sourced from https://exchangerate.host/.
 
 ---
 
