@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { useCurrenciesApi } from "./useCurrenciesApi";
 
 export const useCurrenciesCalculate = () => {
-    const { currencyExchangeRate } = useCurrenciesApi();
+    const { apiObject } = useCurrenciesApi();
+    const [apiSuccess, setApiSuccess] = useState();
+    const [currenciesExchangeRate, setCurrenciesExchangeRate] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [selectedCurrency, setSelectedCurrency] = useState([]);
     const [convertedValue, setConvertedValue] = useState(0);
@@ -11,10 +13,13 @@ export const useCurrenciesCalculate = () => {
     const [dynamicSelectedCurrency, setDynamicSelectedCurrency] = useState(selectedCurrency);
 
     useEffect(() => {
-        if (currencyExchangeRate && currencyExchangeRate.length > 0) {
-            setSelectedCurrency(currencyExchangeRate[0]);
+        if (apiObject && apiObject.rates) {
+            const rates = Object.entries(apiObject.rates);
+            setSelectedCurrency(rates[0]);
+            setCurrenciesExchangeRate(rates);
+            setApiSuccess(apiObject.success);
         }
-    }, [currencyExchangeRate]);
+    }, [apiObject, apiSuccess]);
 
     const handleInputChange = ({ target }) => {
         const { value } = target;
@@ -24,7 +29,7 @@ export const useCurrenciesCalculate = () => {
 
     const handleCurrencyChange = ({ target }) => {
         const selectedCurrencyId = target.value;
-        const selected = currencyExchangeRate.find((currency) => currency[0] === selectedCurrencyId);
+        const selected = currenciesExchangeRate.find((currency) => currency[0] === selectedCurrencyId);
         setSelectedCurrency(selected);
     };
 
@@ -38,12 +43,14 @@ export const useCurrenciesCalculate = () => {
             return
         }
         setShouldRender(true);
-        const convertedValue = inputValue * selectedCurrency[1];
+        const selectedExchangeRate = selectedCurrency[1]
+        const convertedValue = inputValue * selectedExchangeRate;
         setConvertedValue(convertedValue);
         handleRefresh();
     };
 
     return {
+        apiSuccess,
         inputValue,
         selectedCurrency,
         convertedValue,

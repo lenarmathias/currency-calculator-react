@@ -1,6 +1,10 @@
 import { ResultParagraph, ResultText } from "./styled";
 
-const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency, shouldRender, exchangeRatesDate, baseCurrency }) => (
+const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency, shouldRender, apiObject }) => {
+    const baseCurrency = apiObject.base
+    const exchangeRatesDate = apiObject.date
+
+    return (
         <>
             {shouldRender &&
                 <ResultParagraph>
@@ -21,6 +25,7 @@ const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency
                 </ResultText>
             </ResultParagraph>
         </>
-    );
+    )
+};
 
 export default Result;

@@ -1,10 +1,11 @@
 import { FormField, Label, SelectAndInput, ConvertButton } from "./styled";
 
-const Form = ({ inputValue, handleCurrencyChange, handleInputChange, calcConvertedValue, currencyKeys }) => {
+const Form = ({ inputValue, handleCurrencyChange, handleInputChange, calcConvertedValue, apiObject }) => {
+    const currencyKeys = Object.keys(apiObject.rates)
+
     const onFormSubmit = (event) => {
         event.preventDefault();
     };
-    console.log(currencyKeys);
 
     return (
         <FormField onSubmit={onFormSubmit}>
