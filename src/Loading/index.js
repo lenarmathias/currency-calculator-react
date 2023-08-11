@@ -1,9 +1,13 @@
-import { LoadingText } from "./styled";
+import { LoadingContainer, CenteringWrapper, LoadingText } from "./styled";
 
 const Loading = ({ loadingMessage, loadingError }) => (
-        <LoadingText redText={loadingError}>
-            {loadingMessage}
-        </LoadingText>
-    );
+    <LoadingContainer>
+        <CenteringWrapper>
+            <LoadingText redText={loadingError}>
+                {loadingMessage}
+            </LoadingText>
+        </CenteringWrapper>
+    </LoadingContainer>
+);
 
 export default Loading

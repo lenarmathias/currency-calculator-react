@@ -5,9 +5,10 @@ export const ResultParagraph = styled.p`
     color: #ffffff;
     text-align: center;
     font-size: 20px;
+    margin-bottom: 0;
 
     ${({ alwaysVisible }) => alwaysVisible && css`
-        font-size: 14px;
+        font-size: 12px;
     `}
 `;
 

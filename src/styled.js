@@ -26,6 +26,7 @@ export const GlobaStyle = createGlobalStyle`
 
 export const MainContainer = styled.main`
     width: 600px;
+    min-height: 407px;
     border-radius: 5px;
     background-color: #222;
     padding: 20px;
@@ -33,5 +34,6 @@ export const MainContainer = styled.main`
 
     @media (max-width: 767px) {
           width: 100%;
+          min-height: 440px;
       }
 `;
