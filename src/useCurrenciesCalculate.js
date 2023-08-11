@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useCurrenciesApi } from "./useCurrenciesApi";
 
 export const useCurrenciesCalculate = () => {
-    const { apiObject } = useCurrenciesApi();
+    const { apiObject, loading } = useCurrenciesApi();
     const [apiSuccess, setApiSuccess] = useState();
     const [currenciesExchangeRate, setCurrenciesExchangeRate] = useState([]);
     const [inputValue, setInputValue] = useState('');
@@ -50,6 +50,8 @@ export const useCurrenciesCalculate = () => {
     };
 
     return {
+        apiObject,
+        loading,
         apiSuccess,
         inputValue,
         selectedCurrency,

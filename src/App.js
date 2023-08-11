@@ -1,4 +1,3 @@
-import { useCurrenciesApi } from "./useCurrenciesApi";
 import { useCurrenciesCalculate } from "./useCurrenciesCalculate";
 import Clock from "./Clock";
 import Header from "./Header";
@@ -9,11 +8,8 @@ import { GlobaStyle, MainContainer } from "./styled";
 
 function App() {
   const {
+    apiObject,
     loading,
-    apiObject
-  } = useCurrenciesApi();
-
-  const {
     apiSuccess,
     inputValue,
     convertedValue,
