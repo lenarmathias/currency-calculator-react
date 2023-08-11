@@ -6,29 +6,28 @@ const apiAdress = 'https://api.exchangerate.host/latest?base=PLN'
 export const useCurrenciesApi = () => {
     const [apiObject, setApiObject] = useState();
     const [loading, setLoading] = useState(true);
+    const [apiSuccess, setApiSuccess] = useState(true);
 
     useEffect(() => {
-        const loadingOff = () => {
-            setLoading(false);
-        };
-
-        let delayLoading;
-
-        (async () => {
+        const callingApi = async () => {
             try {
                 const response = await axios.get(apiAdress);
                 setApiObject(response.data);
-                delayLoading = setTimeout(loadingOff, 2000);
+                setLoading(false);
             } catch (error) {
                 console.error(error);
                 setLoading(true);
+                clearTimeout(delayLoading);
+                setApiSuccess(false);
             }
-        })();
+        };
+
+        const delayLoading = setTimeout(callingApi, 2000);
 
         return () => {
             clearTimeout(delayLoading);
         };
     }, []);
 
-    return { apiObject, loading };
+    return { apiObject, loading, apiSuccess };
 };

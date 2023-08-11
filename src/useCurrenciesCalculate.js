@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useCurrenciesApi } from "./useCurrenciesApi";
 
 export const useCurrenciesCalculate = () => {
-    const { apiObject, loading } = useCurrenciesApi();
-    const [apiSuccess, setApiSuccess] = useState();
+    const { apiObject, loading, apiSuccess } = useCurrenciesApi();
     const [currenciesExchangeRate, setCurrenciesExchangeRate] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [selectedCurrency, setSelectedCurrency] = useState([]);
@@ -17,9 +16,8 @@ export const useCurrenciesCalculate = () => {
             const rates = Object.entries(apiObject.rates);
             setSelectedCurrency(rates[0]);
             setCurrenciesExchangeRate(rates);
-            setApiSuccess(apiObject.success);
         }
-    }, [apiObject, apiSuccess]);
+    }, [apiObject]);
 
     const handleInputChange = ({ target }) => {
         const { value } = target;
