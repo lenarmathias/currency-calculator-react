@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const response = await axios.get('https://api.exchangerate.host/latest?base=PLN');
+
 export const useCurrenciesApi = () => {
     const [currencyKeys, setCurrencyKeys] = useState([]);
     const [baseCurrency, setBaseCurrency] = useState();
@@ -12,7 +14,6 @@ export const useCurrenciesApi = () => {
 
     const apiResult = async () => {
         try {
-            const response = await axios.get('https://api.exchangerate.host/latest?base=PLN');
             return response.data;
         } catch (error) {
             console.error(error);
