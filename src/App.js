@@ -8,7 +8,14 @@ import Result from "./Result";
 import { GlobaStyle, MainContainer } from "./styled";
 
 function App() {
-  const { loading } = useCurrenciesApi();
+  const {
+    currencyKeys,
+    baseCurrency,
+    exchangeRatesDate,
+    loading,
+    loadingMessage,
+    loadingError
+  } = useCurrenciesApi();
 
   const {
     inputValue,
@@ -28,7 +35,10 @@ function App() {
         <Clock />
         <Header title="Kalkulator Walut" />
         {loading ? (
-          <Loading />
+          <Loading
+            loadingMessage={loadingMessage}
+            loadingError={loadingError}
+          />
         ) : (
           <>
             <Form
@@ -36,12 +46,15 @@ function App() {
               handleCurrencyChange={handleCurrencyChange}
               handleInputChange={handleInputChange}
               calcConvertedValue={calcConvertedValue}
+              currencyKeys={currencyKeys}
             />
             <Result
               refreshedInputValue={dynamicInputValue}
               convertedValue={convertedValue}
               refreshedSelectedCurrency={dynamicSelectedCurrency}
               shouldRender={shouldRender}
+              exchangeRatesDate={exchangeRatesDate}
+              baseCurrency={baseCurrency}
             />
           </>
         )}

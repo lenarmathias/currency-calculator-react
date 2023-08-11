@@ -1,10 +1,6 @@
-import { useCurrenciesApi } from "../useCurrenciesApi";
 import { ResultParagraph, ResultText } from "./styled";
 
-const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency, shouldRender }) => {
-    const { exchangeRatesDate, baseCurrency } = useCurrenciesApi();
-
-    return (
+const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency, shouldRender, exchangeRatesDate, baseCurrency }) => (
         <>
             {shouldRender &&
                 <ResultParagraph>
@@ -25,7 +21,6 @@ const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency
                 </ResultText>
             </ResultParagraph>
         </>
-    )
-};
+    );
 
 export default Result;
