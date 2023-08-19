@@ -22,6 +22,10 @@ export const GlobaStyle = createGlobalStyle`
     align-items: center;
     height: 100vh;
   }
+
+  button {
+    cursor: pointer;
+  }
 `;
 
 export const MainContainer = styled.main`
