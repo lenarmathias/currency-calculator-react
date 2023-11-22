@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react";
-import { useCurrenciesApi } from "./useCurrenciesApi";
+import {useState, useEffect} from "react";
+import {useCurrenciesApi} from "./useCurrenciesApi";
 
 export const useCurrenciesCalculate = () => {
-    const { apiObject, loading, apiSuccess } = useCurrenciesApi();
+    const {
+        apiObject,
+        baseCurrency,
+        loading,
+        apiSuccess
+    } = useCurrenciesApi();
     const [currenciesExchangeRate, setCurrenciesExchangeRate] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [selectedCurrency, setSelectedCurrency] = useState([]);
@@ -12,22 +17,23 @@ export const useCurrenciesCalculate = () => {
     const [dynamicSelectedCurrency, setDynamicSelectedCurrency] = useState(selectedCurrency);
 
     useEffect(() => {
-        if (apiObject && apiObject.rates) {
-            const rates = Object.entries(apiObject.rates);
+        if (apiObject && apiObject.data) {
+            const rates = Object.entries(apiObject.data);
             setSelectedCurrency(rates[0]);
             setCurrenciesExchangeRate(rates);
         }
     }, [apiObject]);
 
-    const handleInputChange = ({ target }) => {
-        const { value } = target;
+    const handleInputChange = ({target}) => {
+        const {value} = target;
         const sanitizedValue = value.replace(/-/g, '');
         setInputValue(sanitizedValue);
     };
 
-    const handleCurrencyChange = ({ target }) => {
+    const handleCurrencyChange = ({target}) => {
         const selectedCurrencyId = target.value;
-        const selected = currenciesExchangeRate.find((currency) => currency[0] === selectedCurrencyId);
+        const selected = currenciesExchangeRate.find(
+            (currency) => currency[0] === selectedCurrencyId);
         setSelectedCurrency(selected);
     };
 
@@ -41,7 +47,7 @@ export const useCurrenciesCalculate = () => {
             return
         }
         setShouldRender(true);
-        const selectedExchangeRate = selectedCurrency[1]
+        const selectedExchangeRate = selectedCurrency[1].value;
         const convertedValue = inputValue * selectedExchangeRate;
         setConvertedValue(convertedValue);
         handleRefresh();
@@ -49,6 +55,7 @@ export const useCurrenciesCalculate = () => {
 
     return {
         apiObject,
+        baseCurrency,
         loading,
         apiSuccess,
         inputValue,

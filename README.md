@@ -77,7 +77,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - **Styled Components**: Styled Components is a popular library for styling React components with a CSS-in-JS approach. It allows you to write CSS code directly within your JavaScript components, making it easier to manage and reuse styles in a component-based architecture.
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 - **Axios**: Axios is a popular JavaScript library used for making HTTP requests from the browser. It was used in this application to fetch data from external sources.
-- **Exchange rates data**: The application's exchange rate data is sourced from https://exchangerate.host/.
+- **Exchange rates data**: The application's exchange rate data is sourced from https://currencyapi.com/.
 
 ---
 

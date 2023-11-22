@@ -1,8 +1,14 @@
-import { ResultParagraph, ResultText } from "./styled";
+import {ResultParagraph, ResultText} from "./styled";
 
-const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency, shouldRender, apiObject }) => {
-    const baseCurrency = apiObject.base
-    const exchangeRatesDate = apiObject.date
+const Result = ({
+                    refreshedInputValue,
+                    convertedValue,
+                    refreshedSelectedCurrency,
+                    shouldRender,
+                    apiObject,
+                    baseCurrency
+                }) => {
+    const formattedDate = apiObject.meta.last_updated_at.slice(0, 10);
 
     return (
         <>
@@ -17,11 +23,11 @@ const Result = ({ refreshedInputValue, convertedValue, refreshedSelectedCurrency
             }
             <ResultParagraph alwaysVisible>
                 Kursy walut pobierane są z Europejskiego Banku Centralnego.
-                <br />
+                <br/>
                 Aktualne na dzień:
                 {" "}
                 <ResultText>
-                    {exchangeRatesDate}
+                    {formattedDate}
                 </ResultText>
             </ResultParagraph>
         </>

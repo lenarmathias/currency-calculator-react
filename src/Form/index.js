@@ -1,7 +1,14 @@
-import { FormField, Label, SelectAndInput, ConvertButton } from "./styled";
+import {FormField, Label, SelectAndInput, ConvertButton} from "./styled";
 
-const Form = ({ inputValue, handleCurrencyChange, handleInputChange, calcConvertedValue, apiObject }) => {
-    const currencyKeys = Object.keys(apiObject.rates)
+const Form = ({
+                  inputValue,
+                  handleCurrencyChange,
+                  handleInputChange,
+                  calcConvertedValue,
+                  apiObject,
+                  baseCurrency
+              }) => {
+    const currencyKeys = Object.keys(apiObject.data)
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -10,7 +17,7 @@ const Form = ({ inputValue, handleCurrencyChange, handleInputChange, calcConvert
     return (
         <FormField onSubmit={onFormSubmit}>
             <Label>
-                Kwota w złotówkach:
+                Kwota w {baseCurrency}:
             </Label>
             <SelectAndInput
                 as="input"
