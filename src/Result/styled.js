@@ -7,7 +7,7 @@ export const ResultParagraph = styled.p`
     font-size: 20px;
     margin-bottom: 0;
 
-    ${({ alwaysVisible }) => alwaysVisible && css`
+    ${({ $alwaysVisible }) => $alwaysVisible && css`
         font-size: 12px;
     `}
 `;

@@ -21,7 +21,7 @@ const Result = ({
                     </ResultText>
                 </ResultParagraph>
             }
-            <ResultParagraph alwaysVisible>
+            <ResultParagraph $alwaysVisible>
                 Kursy walut pobierane są z Europejskiego Banku Centralnego.
                 <br/>
                 Aktualne na dzień:

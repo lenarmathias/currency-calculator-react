@@ -21,7 +21,7 @@ export const LoadingText = styled.p`
     margin: auto;
     color: #ffff;
 
-    ${({ redText }) => redText && css`
+    ${({ $redText }) => $redText && css`
         color: #ff0000;
     `}
 `;
