@@ -11,7 +11,7 @@ export const GlobaStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0 auto;
+    margin: 0 auto !important;
     width: 800px;
     background-color: #222;
     max-width: 90%;
@@ -34,7 +34,7 @@ export const MainContainer = styled.main`
     border-radius: 5px;
     background-color: #222;
     padding: 20px;
-    box-shadow: 0px 0px 10px 0px #000000;
+    box-shadow: 0 0 10px 0 #000000;
 
     @media (max-width: 767px) {
           width: 100%;
