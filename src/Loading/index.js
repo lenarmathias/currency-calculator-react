@@ -1,6 +1,10 @@
-import { LoadingContainer, CenteringWrapper, LoadingText } from "./styled";
+import {
+    LoadingContainer,
+    CenteringWrapper,
+    LoadingText
+} from "./styled";
 
-const Loading = ({ apiSuccess }) => (
+const Loading = ({apiSuccess}) => (
     <LoadingContainer>
         <CenteringWrapper>
             <LoadingText $redText={!apiSuccess}>

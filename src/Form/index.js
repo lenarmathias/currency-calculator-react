@@ -1,4 +1,9 @@
-import {FormField, Label, SelectAndInput, ConvertButton} from "./styled";
+import {
+    FormField,
+    Label,
+    SelectAndInput,
+    ConvertButton
+} from "./styled";
 
 const Form = ({
                   inputValue,
