@@ -4,7 +4,7 @@ import Header from "./Header";
 import Loading from "./Loading";
 import Form from "./Form";
 import Result from "./Result";
-import {GlobaStyle, MainContainer} from "./styled";
+import {GlobalStyle, MainContainer} from "./styled";
 
 function App() {
     const {
@@ -24,7 +24,7 @@ function App() {
 
     return (
         <>
-            <GlobaStyle/>
+            <GlobalStyle/>
             <MainContainer>
                 <Clock/>
                 <Header title="Kalkulator Walut"/>
